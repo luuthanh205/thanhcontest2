@@ -1,4 +1,3 @@
-anh yêu em
 #include <iostream>
 #include <vector>
 #include <string>
@@ -6,42 +5,41 @@ anh yêu em
 
 using namespace std;
 
-// Cấu trúc dữ liệu quản lý thí sinh
-struct Contestant {
+// Cấu trúc dữ liệu bài tập Contest
+struct Problem {
     int id;
-    string name;
-    double score;
+    string title;
+    string difficulty;
+    int point;
 };
 
-// Hàm hiển thị danh sách thí sinh
-void printContestants(const vector<Contestant>& list) {
-    cout << "\n================ DANH SÁCH THÍ SINH ================\n";
-    for (const auto& c : list) {
-        cout << "ID: " << c.id 
-             << " | Họ tên: " << c.name 
-             << " | Điểm số: " << c.score << endl;
+// Hàm hiển thị danh sách bài tập
+void displayProblems(const vector<Problem>& list) {
+    cout << "========== DANH SACH BAI TAP CONTEST ==========\n";
+    for (const auto& p : list) {
+        cout << "ID: " << p.id 
+             << " | Ten bai: " << p.title 
+             << " | Do kho: " << p.difficulty 
+             << " | Diem: " << p.point << endl;
     }
-    cout << "====================================================\n";
+    cout << "===============================================\n";
 }
 
 int main() {
-    // Khởi tạo danh sách thí sinh mẫu
-    vector<Contestant> contestants = {
-        {101, "Thanh", 9.5},
-        {102, "Minh", 8.0},
-        {103, "An", 8.8},
-        {104, "Linh", 9.0}
+    vector<Problem> contest = {
+        {1, "Two Sum", "De", 100},
+        {2, "Binary Search", "Trung binh", 200},
+        {3, "Dijkstra Algorithm", "Kho", 350},
+        {4, "Dynamic Programming Base", "Trung binh", 250}
     };
 
-    cout << "Chương trình Quản lý Contest - Branch Develop" << endl;
+    cout << "Chuong trinh Quan ly Contest - Branch Develop\n" << endl;
 
-    // Sắp xếp thí sinh theo điểm giảm dần
-    sort(contestants.begin(), contestants.end(), [](const Contestant& a, const Contestant& b) {
-        return a.score > b.score;
+    sort(contest.begin(), contest.end(), [](const Problem& a, const Problem& b) {
+        return a.point < b.point;
     });
 
-    // In danh sách ra màn hình
-    printContestants(contestants);
+    displayProblems(contest);
 
     return 0;
 }
