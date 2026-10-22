@@ -5,6 +5,7 @@
 
 using namespace std;
 
+// C·∫•u tr√∫c d·ªØ li·ªáu b√†i t·∫≠p Contest
 struct Problem {
     int id;
     string title;
@@ -12,26 +13,27 @@ struct Problem {
     int point;
 };
 
+// H√†m hi·ªÉn th·ªã danh s√°ch b√†i t·∫≠p
 void displayProblems(const vector<Problem>& list) {
-    cout << "========== DANH S¡CH B¿I T?P CONTEST ==========\n";
+    cout << "========== DANH SACH BAI TAP CONTEST ==========\n";
     for (const auto& p : list) {
         cout << "ID: " << p.id 
-             << " | TÍn b‡i: " << p.title 
-             << " | –? khÛ: " << p.difficulty 
-             << " | –i?m: " << p.point << endl;
+             << " | Ten bai: " << p.title 
+             << " | Do kho: " << p.difficulty 
+             << " | Diem: " << p.point << endl;
     }
     cout << "===============================================\n";
 }
 
 int main() {
     vector<Problem> contest = {
-        {1, "Two Sum", "D?", 100},
-        {2, "Binary Search", "Trung bÏnh", 200},
-        {3, "Dijkstra Algorithm", "KhÛ", 350},
-        {4, "Dynamic Programming Base", "Trung bÏnh", 250}
+        {1, "Two Sum", "De", 100},
+        {2, "Binary Search", "Trung binh", 200},
+        {3, "Dijkstra Algorithm", "Kho", 350},
+        {4, "Dynamic Programming Base", "Trung binh", 250}
     };
 
-    cout << "Chuong trÏnh Qu?n l˝ Contest - Branch Develop\n" << endl;
+    cout << "Chuong trinh Quan ly Contest - Branch Develop\n" << endl;
 
     sort(contest.begin(), contest.end(), [](const Problem& a, const Problem& b) {
         return a.point < b.point;
